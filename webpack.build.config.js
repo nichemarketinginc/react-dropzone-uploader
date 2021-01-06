@@ -2,7 +2,7 @@
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV.trim() !== 'production') {
   throw new Error('Production builds must have NODE_ENV=production.')
 }
 
@@ -37,12 +37,12 @@ function createConfig(entry, output) {
 
 module.exports = [
   createConfig('./src/Dropzone.js', {
-    path: path.resolve('dist'),
+    path: path.resolve('lib'),
     libraryTarget: 'commonjs2',
     filename: 'react-dropzone-uploader.js',
   }),
   createConfig('./src/Dropzone.js', {
-    path: path.resolve('dist'),
+    path: path.resolve('lib'),
     libraryTarget: 'umd',
     filename: 'react-dropzone-uploader.umd.js',
     library: 'ReactDropzoneUploader',

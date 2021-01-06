@@ -5,7 +5,7 @@ module.exports = {
   entry: './examples/src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'examples', 'dist'),
+    path: path.resolve(__dirname, 'examples', 'lib'),
     publicPath: '/',
   },
   module: {
@@ -27,6 +27,6 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'examples', 'dist'),
+    contentBase: path.resolve(__dirname, 'examples', 'lib'),
   },
 }
